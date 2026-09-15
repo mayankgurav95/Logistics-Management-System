@@ -1,6 +1,8 @@
 from database import create_tables
 from modules.customer import add_customer, view_customers
 from modules.booking import create_booking, view_bookings
+from modules.tracking import track_booking, update_status
+from modules.vehicle import add_vehicle, view_vehicles
 
 
 def show_menu():
@@ -11,7 +13,11 @@ def show_menu():
     print("2. View Customers")
     print("3. Create Booking")
     print("4. View Bookings")
-    print("5. Exit")
+    print("5. Track Shipment")
+    print("6. Update Shipment Status")
+    print("7. Add Vehicle")
+    print("8. View Vehicles")
+    print("9. Exit")
 
 
 def main():
@@ -35,6 +41,18 @@ def main():
             view_bookings()
 
         elif choice == "5":
+            track_booking()
+
+        elif choice == "6":
+            update_status()
+
+        elif choice == "7":
+            add_vehicle()
+
+        elif choice == "8":
+            view_vehicles()
+
+        elif choice == "9":
             print("\nThank you for using Logistics Management System!")
             break
 
@@ -44,3 +62,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

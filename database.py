@@ -35,6 +35,17 @@ def create_tables():
         )
     """)
 
+        # Vehicle table
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS vehicles (
+            vehicle_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            vehicle_number TEXT NOT NULL UNIQUE,
+            vehicle_type TEXT NOT NULL,
+            capacity REAL NOT NULL,
+            status TEXT DEFAULT 'AVAILABLE'
+        )
+    """)
+
     conn.commit()
     conn.close()
 

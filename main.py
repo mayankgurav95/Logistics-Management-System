@@ -1,5 +1,6 @@
 from database import create_tables
 from modules.customer import add_customer, view_customers
+from modules.booking import create_booking, view_bookings
 
 
 def show_menu():
@@ -8,7 +9,9 @@ def show_menu():
     print("================================")
     print("1. Add Customer")
     print("2. View Customers")
-    print("3. Exit")
+    print("3. Create Booking")
+    print("4. View Bookings")
+    print("5. Exit")
 
 
 def main():
@@ -26,6 +29,12 @@ def main():
             view_customers()
 
         elif choice == "3":
+            create_booking()
+
+        elif choice == "4":
+            view_bookings()
+
+        elif choice == "5":
             print("\nThank you for using Logistics Management System!")
             break
 

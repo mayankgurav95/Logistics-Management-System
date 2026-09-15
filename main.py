@@ -4,6 +4,8 @@ from modules.booking import create_booking, view_bookings
 from modules.tracking import track_booking, update_status
 from modules.vehicle import add_vehicle, view_vehicles
 from modules.driver import add_driver, view_drivers
+from modules.payment import add_payment, view_payments
+from modules.reports import show_reports
 
 
 def show_menu():
@@ -20,7 +22,10 @@ def show_menu():
     print("8. View Vehicles")
     print("9. Add Driver")
     print("10. View Drivers")
-    print("11. Exit")
+    print("11. Add Payment")
+    print("12. View Payments")
+    print("13. View Reports")
+    print("14. Exit")
 
 
 def main():
@@ -62,6 +67,15 @@ def main():
             view_drivers()
 
         elif choice == "11":
+            add_payment()
+
+        elif choice == "12":
+            view_payments()
+
+        elif choice == "13":
+            show_reports()
+
+        elif choice == "14":
             print("\nThank you for using Logistics Management System!")
             break
 
@@ -71,3 +85,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

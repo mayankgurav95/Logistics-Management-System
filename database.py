@@ -57,6 +57,19 @@ def create_tables():
         )
     """)
 
+    # Payment table
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS payments (
+            payment_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            booking_id INTEGER NOT NULL,
+            amount REAL NOT NULL,
+            payment_method TEXT NOT NULL,
+            payment_status TEXT DEFAULT 'PAID',
+            payment_date TEXT NOT NULL,
+            FOREIGN KEY (booking_id) REFERENCES bookings(booking_id)
+        )
+    """)
+
     conn.commit()
     conn.close()
 

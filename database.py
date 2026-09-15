@@ -35,13 +35,24 @@ def create_tables():
         )
     """)
 
-        # Vehicle table
+    # Vehicle table
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS vehicles (
             vehicle_id INTEGER PRIMARY KEY AUTOINCREMENT,
             vehicle_number TEXT NOT NULL UNIQUE,
             vehicle_type TEXT NOT NULL,
             capacity REAL NOT NULL,
+            status TEXT DEFAULT 'AVAILABLE'
+        )
+    """)
+
+    # Driver table
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS drivers (
+            driver_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            phone TEXT NOT NULL,
+            license_number TEXT NOT NULL UNIQUE,
             status TEXT DEFAULT 'AVAILABLE'
         )
     """)

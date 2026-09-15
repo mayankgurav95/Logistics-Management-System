@@ -3,6 +3,7 @@ from modules.customer import add_customer, view_customers
 from modules.booking import create_booking, view_bookings
 from modules.tracking import track_booking, update_status
 from modules.vehicle import add_vehicle, view_vehicles
+from modules.driver import add_driver, view_drivers
 
 
 def show_menu():
@@ -17,7 +18,9 @@ def show_menu():
     print("6. Update Shipment Status")
     print("7. Add Vehicle")
     print("8. View Vehicles")
-    print("9. Exit")
+    print("9. Add Driver")
+    print("10. View Drivers")
+    print("11. Exit")
 
 
 def main():
@@ -53,6 +56,12 @@ def main():
             view_vehicles()
 
         elif choice == "9":
+            add_driver()
+
+        elif choice == "10":
+            view_drivers()
+
+        elif choice == "11":
             print("\nThank you for using Logistics Management System!")
             break
 
@@ -62,4 +71,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
